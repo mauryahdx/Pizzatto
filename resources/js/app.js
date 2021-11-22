@@ -2,6 +2,8 @@
 import axios from 'axios'
 import Noty from 'noty'
 
+import  { initAdmin } from './admin'
+
 let cartCounter = document.querySelector('#cartCounter')
 let addToCart = document.querySelectorAll('.add-to-cart')
 //console.log(cartCounter)
@@ -44,3 +46,13 @@ addToCart.forEach((btn) => {
     })
 })
 //console.log(addToCart.length)
+
+const alertMsg = document.querySelector('#success-alert')
+
+if(alertMsg) {
+    setTimeout(()=>{
+        alertMsg.remove()
+    }, 2000)
+}
+
+initAdmin()
