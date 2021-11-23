@@ -26,7 +26,7 @@ function cartController(){
                         //console.log(cart.items)
                         //console.log(cart.items)  
                          if((cart.items[req.body._id]==null)){
-                             console.log("inside if")
+                             //console.log("inside if")
                              cart.items[req.body._id] = {
                                 item: req.body,
                                 qty:1 
@@ -34,15 +34,15 @@ function cartController(){
                              cart.totalQty =cart.totalQty+1
                              cart.totalPrice = cart.totalPrice + req.body.price
                          } else {
-                             console.log("inside else")
+                             //console.log("inside else")
                              cart.items[req.body._id].qty +=1
-                             console.log("inside else2")
+                             //console.log("inside else2")
                              cart.totalQty = cart.totalQty + 1
                              cart.totalPrice = cart.totalPrice + req.body.price
                          }
-                            console.log(req.body)
-                            console.log(cart)
-                            console.log('/////////')
+                            //console.log(req.body)
+                            //console.log(cart)
+                            //console.log('/////////')
                             return res.json({ totalQty: req.session.cart.totalQty})
                         }
 }
